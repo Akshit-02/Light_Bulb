@@ -1,0 +1,246 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(44, 43, 43);
+    font-family: 'Cinzel', serif;
+}
+
+body.on {
+    background: radial-gradient(rgb(87, 86, 86), black);
+}
+
+#head {
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    color: rgb(21, 20, 20);
+}
+
+.heading {
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading div{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    animation: animate 2.5s linear infinite;
+}
+
+
+.heading div:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.heading div:nth-child(2) {
+    animation-delay: 0.22s;
+}
+
+.heading div:nth-child(3) {
+    animation-delay: 0.44s;
+}
+
+.heading div:nth-child(4) {
+    animation-delay: 0.66s;
+}
+
+.heading div:nth-child(5) {
+    animation-delay: 0.88s;
+}
+
+.heading div:nth-child(6) {
+    animation-delay: 1.1s;
+}
+
+.heading div:nth-child(7) {
+    animation-delay: 1.32s;
+}
+
+.heading div:nth-child(8) {
+    animation-delay: 1.54s;
+}
+
+.heading div:nth-child(9) {
+    animation-delay: 1.76s;
+}
+
+.heading div:nth-child(10) {
+    animation-delay: 1.98s;
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        color: white;
+        filter: blur(1px);
+        text-shadow: 0 0 20px rgb(0, 179, 255),
+            0 0 40px rgb(0, 179, 255),
+            0 0 80px rgb(0, 179, 255),
+            0 0 120px rgb(0, 179, 255),
+            0 0 200px rgb(0, 179, 255),
+            0 0 300px rgb(0, 179, 255),
+            0 0 400px rgb(0, 179, 255);
+    }
+
+    5%,
+    95% {
+        color: rgb(21, 20, 20);
+        filter: blur(0px);
+        text-shadow: none;
+    }
+}
+@media only screen and (max-width: 630px) {
+    #head{
+        height: 40px;
+    }
+    .heading{
+        font-size: 2rem;  
+    }
+    
+}
+
+#bottom {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wire {
+    position: absolute;
+    width: 5px;
+    height: 50vh;
+    bottom: 50%;
+    background: black;
+    left: calc(50% - 2px);
+    z-index: -1;
+}
+
+.bulb {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background-color: rgb(154, 151, 151);
+    border-radius: 50%;
+}
+
+body.on .bulb {
+    background: white;
+    box-shadow: 0 0 50px white,
+        0 0 150px white,
+        0 0 250px white,
+        0 0 350px white;
+}
+
+.bulb::before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 45px;
+    top: -50px;
+    left: 27.5px;
+    background-color: rgb(154, 151, 151);
+    border-top: 30px solid black;
+    border-radius: 10px;
+}
+
+body.on .bulb::before {
+    background: white;
+}
+
+.bulb span:nth-child(1) {
+    position: absolute;
+    top: -15px;
+    left: 1.5px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    transform: rotate(344deg);
+    border-bottom-right-radius: 50px;
+    box-shadow: 20px 20px 0px 10px rgb(154, 151, 151);
+}
+
+body.on .bulb span:nth-child(1) {
+    box-shadow: 20px 20px 0px 10px white;
+}
+
+.bulb span:nth-child(2) {
+    position: absolute;
+    top: -15px;
+    right: 1.5px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    transform: rotate(105deg);
+    border-bottom-right-radius: 50px;
+    box-shadow: 20px 20px 0px 10px rgb(154, 151, 151);
+}
+
+body.on .bulb span:nth-child(2) {
+    box-shadow: 20px 20px 0px 10px white;
+}
+
+.switch {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    bottom: 50px;
+    right: 50px;
+    background: linear-gradient(white, rgb(204, 204, 204), white);
+    border: 2px solid;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px rgb(0, 179, 255);
+}
+
+.switch .button {
+    position: relative;
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(rgb(117, 116, 116), white, rgb(117, 116, 116));
+    border-radius: 7px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.switch .button::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 80%;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.on .switch .button::before {
+    top: 20%;
+}
+
+#voice {
+    display: none;
+}
